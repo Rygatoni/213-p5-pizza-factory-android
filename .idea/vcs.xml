@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/213-p2-fitness-manager-plus" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/213-p2-fitness-manager-pluss" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Project 1" vcs="Git" />

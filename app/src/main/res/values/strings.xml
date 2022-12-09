@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">RU Pizzeria</string>
+    <string name="add_order_btn">Total: $14.99 - Add To Order</string>
+    <string name="chicago">Chicago-Style Pizza</string>
+    <string name="newyork">New York-Style Pizza</string>
+    <string name="size">Size</string>
+    <string-array name="size_array">
+        <item>SMALL</item>
+        <item>MEDIUM</item>
+        <item>LARGE</item>
+    </string-array>
+
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="flavors">Flavors</string>
+    <string name="deluxe">Deluxe</string>
+    <string name="deluxechicago">Deep dish crust. Topped with sausage, pepperoni, green pepper, onion, and mushroom.</string>
+    <string name="deluxenewyork">Brooklyn crust. Topped with sausage, pepperoni, green pepper, onion, and mushroom.</string>
+    <string name="bbqchicken">BBQ Chicken</string>
+    <string name="bbqchickenchicago">Pan crust. Topped with BBQ chicken, green pepper, provolone, and cheddar.</string>
+    <string name="bbqchickennewyork">Thin crust. Topped with BBQ chicken, green pepper, provolone, and cheddar.</string>
+    <string name="meatzza">Meatzza</string>
+    <string name="meatzzachicago">Stuffed crust. Topped with sausage, pepperoni, beef, and ham.</string>
+    <string name="meatzzanewyork">Hand tossed crust. Topped with sausage, pepperoni, beef, and ham.</string>
+    <string name="byo">Build Your Own</string>
+    <string name="byochicago">Pan crust. Pick your own toppings! (+$1.59 per topping)</string>
+    <string name="byonewyork">Hand tossed crust. Pick your own toppings! (+$1.59 per topping)</string>
+    <string name="place_order_btn">Place Order</string>
+    <string name="order">Order #1000</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="tax">Sales Tax:</string>
+    <string name="ordertotal">Total:</string>
+    <string name="cancelorder">Cancel Order</string>
+
 </resources>

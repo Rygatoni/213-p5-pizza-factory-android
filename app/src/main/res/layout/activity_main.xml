@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/current_orders_btn"
         android:layout_width="204dp"
         android:layout_height="64dp"
         android:backgroundTint="#8E7D62"
@@ -23,19 +23,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/add_btn"
         android:layout_width="204dp"
         android:layout_height="64dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="#8E7D62"
         android:text="Add Pizza"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/current_orders_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/store_orders_btn"
         android:layout_width="204dp"
         android:layout_height="64dp"
         android:layout_marginTop="50dp"
@@ -43,6 +43,6 @@
         android:text="Store Orders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/current_orders_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
