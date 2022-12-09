@@ -19,30 +19,57 @@
         app:iconTint="#9A1414"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="204dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="104dp"
         android:backgroundTint="#8E7D62"
-        android:text="Add Pizza"
+        android:text="New York Pizza"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="204dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#8E7D62"
+        android:text="New York Pizza"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="204dp"
         android:layout_height="64dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#8E7D62"
         android:text="Store Orders"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="141dp"
+        android:layout_height="50dp"
+        android:text="RU Pizzeria"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="100dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
