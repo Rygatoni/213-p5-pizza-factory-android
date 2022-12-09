@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">RU Pizzeria</string>
+    <string name="addpizza">Add Pizza</string>
+    <string name="currentorders">Current Order</string>
+    <string name="storeorders">Store Orders</string>
     <string name="add_order_btn">Total: $14.99 - Add To Order</string>
     <string name="chicago">Chicago-Style Pizza</string>
     <string name="newyork">New York-Style Pizza</string>
@@ -9,7 +12,7 @@
         <item>MEDIUM</item>
         <item>LARGE</item>
     </string-array>
-
+    <string name="topping">Topping</string>
     <string name="small">Small</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
@@ -32,5 +35,6 @@
     <string name="tax">Sales Tax:</string>
     <string name="ordertotal">Total:</string>
     <string name="cancelorder">Cancel Order</string>
+    <string name="defaultprice">0.00</string>
 
 </resources>
