@@ -64,8 +64,12 @@ public class StoreOrdersActivity extends AppCompatActivity {
             alert.setMessage("Are you sure you would like to cancel this order?");
             alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    orders.remove(currentPosition);
-                    storeOrders.remove(currentPosition);
+                    if(currentPosition <= orders.size() - 1) {
+                        orders.remove(currentPosition);
+                    }
+                    if(currentPosition <= storeOrders.size() - 1) {
+                        storeOrders.remove(currentPosition);
+                    }
                     currentSelection = null;
                     currentPosition = -1;
                     updateList();
