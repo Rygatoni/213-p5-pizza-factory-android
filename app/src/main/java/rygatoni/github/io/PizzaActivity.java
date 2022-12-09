@@ -103,6 +103,11 @@ public class PizzaActivity extends AppCompatActivity {
     private ArrayList<Topping> currentToppings = new ArrayList<>();
     private PizzaAdapter adapter;
 
+    /**
+     * Sets initial Pizza Activity view
+     * @param savedInstanceState Current Saved Instance State
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +137,10 @@ public class PizzaActivity extends AppCompatActivity {
             dialog.show();
         });
     }
+
+    /**
+     * Adds a pizza to an order
+     */
 
     private void add_pizza() {
         Pizza finalPizza = null;
@@ -166,10 +175,13 @@ public class PizzaActivity extends AppCompatActivity {
                 MainActivity.getCurrentOrder().add(finalPizza);
                 break;
         }
-        for(int i = 0; i < MainActivity.getCurrentOrder().getPizzas().size(); i++) {
-            System.out.println(pizzaPrint(MainActivity.getCurrentOrder().getPizzas().get(i)));
-        }
     }
+
+    /**
+     * Gets the style of Pizza based on the crust
+     * @param currentPizza Current Pizza
+     * @return The style of pizza
+     */
 
     private static String getPizzaType(Pizza currentPizza){
         switch(currentPizza.getCrust()) {
@@ -185,6 +197,12 @@ public class PizzaActivity extends AppCompatActivity {
                 return null;
         }
     }
+
+    /**
+     * Converts a pizza into a string
+     * @param currentPizza Current pizza
+     * @return Current pizza as a string with its ingredients
+     */
     public static String pizzaPrint(Pizza currentPizza) {
         String finalString = "";
         String pizzaType = getPizzaType(currentPizza);
@@ -196,6 +214,12 @@ public class PizzaActivity extends AppCompatActivity {
         return finalString;
     }
 
+    /**
+     * Converts a pizza into a string
+     * @param currentPizza Current pizza
+     * @return Current pizza as a string. (no toppings)
+     */
+
     public static String pizzaPrintLabel(Pizza currentPizza) {
         String finalString = "";
         String pizzaType = getPizzaType(currentPizza);
@@ -203,6 +227,12 @@ public class PizzaActivity extends AppCompatActivity {
         finalString += pizzaType + " - " + flavorName + " - " + currentPizza.getCrust() + " - " + currentPizza.getSize();
         return finalString.replace("_", " ");
     }
+
+    /**
+     * Gets the toppings of a pizza as a sting
+     * @param currentPizza Current pizza
+     * @return Pizza toppings as a string
+     */
 
     public static String pizzaPrintToppings(Pizza currentPizza) {
         String finalString = "";
@@ -212,9 +242,17 @@ public class PizzaActivity extends AppCompatActivity {
         return finalString.replace("_", " ");
     }
 
+    /**
+     * Updates pizza adapter list
+     */
     public void updateList() {
         adapter.notifyDataSetChanged();
     }
+
+    /**
+     * Allows toppings to be added if build your own pizza is toggled
+     * @param toggled Build Your Own Toggle
+     */
 
     public void byoToggle(boolean toggled) {
         if(toggled) {
@@ -226,19 +264,38 @@ public class PizzaActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets pizza style based on the toggle
+     * @param style Pizza Style
+     */
+
     public void setStyle(boolean style) {
         this.style = style;
     }
+
+    /**
+     * Sets the size of the pizza and updates the cost
+     * @param size Size of pizza
+     */
 
     public void setSize(Size size) {
         this.size = size;
         updateTotal();
     }
 
+    /**
+     * Sets the flavor of the pizza and updates the cost
+     * @param flavor Pizza flavor
+     */
+
     public void setFlavor(int flavor) {
         this.flavor = flavor;
         updateTotal();
     }
+
+    /**
+     * Updates the total cost of a pizza
+     */
 
     public void updateTotal() {
         String total = null;

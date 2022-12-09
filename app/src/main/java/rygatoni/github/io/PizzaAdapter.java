@@ -20,25 +20,69 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
+    /**
+     * Current Context
+     */
     private Context context;
+    /**
+     * List of Toppings
+     */
     private ArrayList<Topping> toppings;
+    /**
+     * List of current Toppings
+     */
     private ArrayList<Topping> currentToppings = new ArrayList<>();
+    /**
+     * Current Activity
+     */
     private static PizzaActivity activity;
-
+    /**
+     * Initial chicago style toggle
+     */
     private static final boolean CHICAGO_STYLE = false;
+    /**
+     * Initial NY style toggle
+     */
     private static final boolean NEWYORK_STYLE = true;
+    /**
+     * Representation of Deluxe pizza
+     */
 
     private static final int DELUXE = 0;
+    /**
+     * Representation of BBQ Chicken pizza
+     */
     private static final int BBQCHICKEN = 1;
+    /**
+     * Representation of Meatzza pizza
+     */
     private static final int MEATZZA = 2;
+    /**
+     * Representation of Build Your Own pizza
+     */
     private static final int BUILDYOUROWN = 3;
 
+    /**
+     * Holder for list of Toppings
+     */
+
     private ArrayList<ToppingHolder> toppingHolders = new ArrayList<>();
+    /**
+     * List of filled toppings
+     */
     private ArrayList<Topping> filledToppings = new ArrayList<>(
             Arrays.asList(Topping.SAUSAGE, Topping.PEPPERONI, Topping.GREEN_PEPPER, Topping.ONION,
                     Topping.MUSHROOM, Topping.BBQ_CHICKEN, Topping.PROVOLONE, Topping.CHEDDAR,
                     Topping.BEEF, Topping.HAM, Topping.PINEAPPLE, Topping.BUFFALO_CHICKEN, Topping.MEATBALL));
+
+    /**
+     * Sets context, toppings list, current toppings list, and pizza activity
+     * based on arguments
+     * @param context Context that is to be set
+     * @param toppings Toppings that is to be set
+     * @param currentToppings Current toppings that is to be set
+     * @param activity Pizza activity that is to be set
+     */
 
     public PizzaAdapter(Context context, ArrayList<Topping> toppings, ArrayList<Topping> currentToppings, PizzaActivity activity) {
         this.context = context;
@@ -47,12 +91,18 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.activity = activity;
     }
 
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = null;
-        System.out.println("Test" + viewType);
         if(viewType == 0) {
             view = inflater.inflate(R.layout.row_pizzafactory, parent, false);
             return new PizzaHolder(view);

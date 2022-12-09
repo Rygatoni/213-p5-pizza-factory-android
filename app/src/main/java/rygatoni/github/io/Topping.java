@@ -59,18 +59,40 @@ public enum Topping {
      * Meatball pizza topping
      */
     MEATBALL(R.drawable.meatball_topping, 12);
+    /**
+     * Topping image
+     */
 
     private int image;
+    /**
+     * Topping id
+     */
     private int id;
+
+    /**
+     * Sets topping image and id
+     * @param image Topping image
+     * @param id Topping id
+     */
 
     Topping(int image, int id) {
         this.image = image;
         this.id = id;
     }
 
+    /**
+     * Gets image of topping
+     * @return Image of Topping
+     */
+
     public int getImage() {
         return this.image;
     }
+
+    /**
+     * Gets id of topping
+     * @return id of topping
+     */
 
     public int getId() {
         return this.id;

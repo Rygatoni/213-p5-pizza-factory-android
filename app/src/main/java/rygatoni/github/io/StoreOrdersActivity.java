@@ -16,15 +16,44 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class StoreOrdersActivity extends AppCompatActivity {
+    /**
+     * Format for costs
+     */
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
+    /**
+     * List view for store orders
+     */
     private ListView orderView;
+    /**
+     * Adapter for Store Orders
+     */
     private ArrayAdapter adapter;
+    /**
+     * Order Selection
+     */
     private View currentSelection;
+    /**
+     * Cancel order Button
+     */
     private Button cancel_order_btn;
+    /**
+     * Initial value of order position
+     */
     private int currentPosition = -1;
+    /**
+     * List of orders as strings
+     */
     ArrayList<String> orders;
+    /**
+     * List of store orders
+     */
     ArrayList<Order> storeOrders;
+
+    /**
+     * Sets inital settings of Store Orders Activity
+     * @param savedInstanceState Current Instance State
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +85,11 @@ public class StoreOrdersActivity extends AppCompatActivity {
         cancel_order_btn_setup();
         updateList();
     }
+
+    /**
+     * Sets Alert dialog and cancel order button settings.
+     * Alert Dialog will ask if the user is sure of cancelling
+     */
 
     private void cancel_order_btn_setup() {
         cancel_order_btn.setOnClickListener(view -> {
@@ -93,7 +127,6 @@ public class StoreOrdersActivity extends AppCompatActivity {
     }
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-        System.out.println(position);
         updateList();
         if(currentSelection != null) {
             currentSelection.setBackgroundColor(currentSelection.getResources().getColor(R.color.brown));
