@@ -99,7 +99,7 @@ public class PizzaActivity extends AppCompatActivity {
     private ArrayList<Topping> filledToppings = new ArrayList<>(
             Arrays.asList(Topping.SAUSAGE, Topping.PEPPERONI, Topping.GREEN_PEPPER, Topping.ONION,
                     Topping.MUSHROOM, Topping.BBQ_CHICKEN, Topping.PROVOLONE, Topping.CHEDDAR,
-                    Topping.BEEF, Topping.HAM, Topping.PINEAPPLE, Topping.BUFFALO_CHICKEN, Topping.MEATBALL));
+                    Topping.BEEF, Topping.HAM, Topping.PINEAPPLE, Topping.BUFFALO_CHICKEN, Topping.MEATBALL, Topping.MEATBALL));
     private ArrayList<Topping> currentToppings = new ArrayList<>();
     private PizzaAdapter adapter;
 

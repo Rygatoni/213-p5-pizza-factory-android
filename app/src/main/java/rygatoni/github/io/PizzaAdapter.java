@@ -92,10 +92,10 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     /**
-     *
-     * @param parent
-     * @param viewType
-     * @return
+     * Creates the view holder.
+     * @param parent The parent of the view
+     * @param viewType Integer representing the position
+     * @return ViewHolder
      */
 
     @NonNull
@@ -116,6 +116,11 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return toppingHolder;
     }
 
+    /**
+     * Ran when the views are being bound to the ViewHolder.
+     * @param holder The holder which contains the view being bound
+     * @param position The position of the view
+     */
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof ToppingHolder) {
@@ -158,6 +163,11 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+    /**
+     * Adds a topping to the current topping list.
+     * @param currentToppings The arraylist of current toppings.
+     * @param topping The topping to add.
+     */
     private void addTopping(ArrayList<Topping> currentToppings, Topping topping) {
         if(currentToppings.size() == 0) {
             currentToppings.add(topping);
@@ -172,16 +182,28 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         currentToppings.add(topping);
     }
 
+    /**
+     * Returns the position of the view.
+     * @param position integer
+     * @return The position
+     */
     @Override
     public int getItemViewType(int position) {
         return position;
     }
 
+    /**
+     * Returns the amount of pizzas in the order.
+     * @return the amount of pizzas in the order
+     */
     @Override
     public int getItemCount() {
         return toppings.size() + 1;
     }
 
+    /**
+     * Contains all of the views for PizzaActivity
+     */
     public static class PizzaHolder extends RecyclerView.ViewHolder {
         private ImageView pizzaView;
         private Switch style_switch;
@@ -216,12 +238,19 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+    /**
+     * ViewHolder for row_toppings.xml
+     */
     public static class ToppingHolder extends RecyclerView.ViewHolder {
         ImageView topping_image;
         TextView topping_label;
         Switch topping_switch;
         CardView topping_view;
 
+        /**
+         * Constructor for ToppingHolder
+         * @param itemView The view containing the items
+         */
         public ToppingHolder(@NonNull View itemView) {
             super(itemView);
             topping_image = itemView.findViewById(R.id.topping_image);
@@ -231,12 +260,29 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+    /**
+     * ViewHolder for empty white space.
+     */
     public static class PaddingHolder extends RecyclerView.ViewHolder {
-
+        /**
+         * Constructor for PaddingHolder
+         * @param itemView The view containing the items
+         */
         public PaddingHolder(@NonNull View itemView) {
             super(itemView);
         }
     }
+
+    /**
+     * Changes descriptions and images when the switch is toggled.
+     * @param itemView The view containing the items.
+     * @param style_switch The switch that toggles the pizza style.
+     * @param deluxe View for Deluxe pizza
+     * @param bbqChicken View for BBQ Chicken pizza
+     * @param meatzza View for Meatzza pizza
+     * @param byo View for Build Your Own pizza
+     * @param pizzaView The pizza preview image
+     */
     private static void switchSetup(View itemView, Switch style_switch, TextView deluxe, TextView bbqChicken, TextView meatzza, TextView byo, ImageView pizzaView) {
         style_switch.setOnClickListener(view -> {
             if(style_switch.isChecked()) {
@@ -257,6 +303,11 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
     }
 
+    /**
+     * Sets up the spinner for choosing the size.
+     * @param itemView The view that contains all of the items.
+     * @param size_spinner The spinner which lets you choose the size
+     */
     private static void spinnerSetup(View itemView, Spinner size_spinner) {
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(itemView.getContext(),
                 R.array.size_array, android.R.layout.simple_spinner_item);
@@ -290,6 +341,12 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
     }
 
+    /**
+     * Setup for Deluxe flavored pizza.
+     * @param itemView The view which contains all the items.
+     * @param deluxe The view for Deluxe flavored pizza
+     * @param flavors The list of flavors
+     */
     public static void deluxeSetup(View itemView, CardView deluxe, CardView[] flavors) {
         deluxe.setOnClickListener(view -> {
             for(int i = 0; i < flavors.length; i++) {
@@ -301,6 +358,12 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
     }
 
+    /**
+     * Setup for BBQChicken flavored pizza.
+     * @param itemView The view which contains all the items.
+     * @param bbqChicken The view for BBQChicken flavored pizza
+     * @param flavors The list of flavors
+     */
     public static void bbqSetup(View itemView, CardView bbqChicken, CardView[] flavors) {
         bbqChicken.setOnClickListener(view -> {
             for(int i = 0; i < flavors.length; i++) {
@@ -312,6 +375,12 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
     }
 
+    /**
+     * Setup for Meatzza flavored pizza.
+     * @param itemView The view which contains all the items.
+     * @param meatzza The view for Meatzza flavored pizza
+     * @param flavors The list of flavors
+     */
     public static void meatzzaSetup(View itemView, CardView meatzza, CardView[] flavors) {
         meatzza.setOnClickListener(view -> {
             for(int i = 0; i < flavors.length; i++) {
@@ -323,6 +392,12 @@ public class PizzaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
     }
 
+    /**
+     * Setup for BuildYourOwn flavored pizza.
+     * @param itemView The view which contains all the items.
+     * @param byo The view for Build Your Own flavored pizza
+     * @param flavors The list of flavors
+     */
     public static void byoSetup(View itemView, CardView byo, CardView[] flavors) {
         byo.setOnClickListener(view -> {
             for(int i = 0; i < flavors.length; i++) {

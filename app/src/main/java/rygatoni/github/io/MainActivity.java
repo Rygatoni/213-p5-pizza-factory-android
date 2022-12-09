@@ -6,30 +6,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+/**
+ * The first activity ran by the RU Pizzeria app. Holds buttons to all of the activities.
+ * @author Rygl Ato
+ * @author Jeffrey Mijares
+ */
 public class MainActivity extends AppCompatActivity {
     /**
-     * Buttons for the Main menu
+     * Buttons to access the rest of the activities.
      */
-
     private Button add_btn, current_orders_btn, store_orders_btn;
     /**
-     * Current Order
+     * The current order.
      */
     private static Order order = new Order();
     /**
-     * Current Store Orders
+     * The current store orders.
      */
     private static StoreOrders currentStoreOrders = new StoreOrders();
     /**
-     * Initial Order Number
+     * The current order number.
      */
     private static int currentOrderNumber = 1000;
 
     /**
-     * Sets initial Main Activity settings
-     * @param savedInstanceState Current Instance State
+     * Ran when MainActivity is initizlied.
+     * @param savedInstanceState The current savedInstanceState
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,26 +56,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Gets the current store orders
-     * @return Current Store
+     * Returns the current store orders.
+     * @return the current store orders
      */
-
     public static StoreOrders getStoreOrders() {return currentStoreOrders;}
 
+    /**
+     * Returns the current order.
+     * @return the current order
+     */
     public static Order getCurrentOrder() {
         return order;
     }
 
+    /**
+     * Returns the current order number.
+     * @return the current order number
+     */
     public static int getCurrentOrderNumber() {
         return currentOrderNumber;
     }
 
+    /**
+     * Places the order into store orders.
+     */
     public static void placeOrder() {
         currentStoreOrders.add(order);
         currentOrderNumber++;
         order = new Order(currentOrderNumber);
     }
 
+    /**
+     * Clears the current order.
+     */
     public static void clearOrder() {
         order.getPizzas().clear();
     }
