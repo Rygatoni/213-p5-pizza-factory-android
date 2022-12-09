@@ -62,8 +62,6 @@ public enum Topping {
     /**
      * Topping image
      */
-
-
     private int image;
     /**
      * Topping id

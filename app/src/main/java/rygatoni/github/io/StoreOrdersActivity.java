@@ -119,6 +119,10 @@ public class StoreOrdersActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sets cancel order button click ability depending if there are any orders
+     */
+
     private void updateList() {
         if(orders.size() == 0) {
             cancel_order_btn.setBackgroundColor(cancel_order_btn.getResources().getColor(R.color.light_brown));
@@ -129,6 +133,14 @@ public class StoreOrdersActivity extends AppCompatActivity {
         }
         adapter.notifyDataSetChanged();
     }
+
+    /**
+     * Highlights selected order on list
+     * @param l Adapter
+     * @param v Current view
+     * @param position Position of order
+     * @param id Order id
+     */
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         updateList();
