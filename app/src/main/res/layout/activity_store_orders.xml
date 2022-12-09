@@ -3,25 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/brown">
 
     <Button
         android:id="@+id/cancel_order_btn"
         android:layout_width="312dp"
         android:layout_height="57dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:text="@string/cancelorder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderView" />
 
     <ListView
         android:id="@+id/orderView"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="420dp"
+        android:layout_height="615dp"
         android:background="@color/brown"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>
