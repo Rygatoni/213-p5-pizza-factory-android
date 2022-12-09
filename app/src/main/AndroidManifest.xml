@@ -28,6 +28,29 @@
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".store_orders2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".chicago_pizza"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".store_orders"
+            android:exported="false"
+            android:label="@string/title_activity_store_orders"
+            android:theme="@style/Theme.Project5.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
